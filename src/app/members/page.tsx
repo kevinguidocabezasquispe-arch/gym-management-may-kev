@@ -1,6 +1,13 @@
 
 import Link from "next/link";
-
+import {
+  UsersRound,
+  ChartNoAxesCombined,
+  Banknote,
+  Building2,
+  Files,
+  Plus,
+} from "lucide-react";
 const members = [
   {
     id: 1,
@@ -121,13 +128,54 @@ export default function MembersPage() {
           </div>
         </div>
 
-        <Link
-          href="/add-member"
-          aria-label="Add Member"
-          className="absolute bottom-6 right-4 flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-3xl text-white hover:bg-red-700"
-        >
-          +
-        </Link>
+       
+    {/* Barra inferior del gimnasio */}
+<div className="fixed bottom-0 left-1/2 z-50 w-full max-w-[390px] -translate-x-1/2 bg-black">
+
+  {/* Botón rojo para agregar miembro */}
+  <Link
+    href="/add-member"
+    aria-label="Agregar miembro"
+    className="absolute -top-14 right-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-600 text-white shadow-lg"
+  >
+    <Plus size={36} strokeWidth={3} />
+  </Link>
+
+  <nav className="grid grid-cols-5 rounded-t-2xl bg-[#302c2c] px-1 py-4">
+
+    <Link href="/members" className="flex flex-col items-center gap-1 text-[#9bd900]">
+      <UsersRound size={26} />
+      <span className="text-[10px]">Members</span>
+    </Link>
+
+    <div className="flex flex-col items-center gap-1 text-white">
+      <ChartNoAxesCombined size={26} />
+      <span className="text-[10px]">Dashboard</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-1 text-white">
+      <Banknote size={26} />
+      <span className="text-[10px]">Collection</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-1 text-white">
+      <Building2 size={26} />
+      <span className="text-[10px]">Gym</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-1 text-white">
+      <Files size={26} />
+      <span className="text-[10px] text-center">
+        Today Report
+      </span>
+    </div>
+
+  </nav>
+
+  <div className="flex h-6 items-center justify-center bg-black">
+    <div className="h-1 w-28 rounded-full bg-white" />
+  </div>
+</div> 
       </div>
     </main>
   );
